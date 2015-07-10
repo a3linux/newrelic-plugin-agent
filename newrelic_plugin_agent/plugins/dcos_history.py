@@ -67,23 +67,23 @@ class DcosHistory(base.JSONStatsPlugin):
                 slaves_metrics[slave_id]['used_resources'] = {}
 
         for slave in slaves:
-            slaves_metrics[slaves['id']]['tasks']['ERROR'] = slave['TASK_ERROR']
-            slaves_metrics[slaves['id']]['tasks']['FAILED'] = slave['TASK_FAILED']
-            slaves_metrics[slaves['id']]['tasks']['KILLED'] = slave['TASK_KILLED']
-            slaves_metrics[slaves['id']]['tasks']['FINISHED'] = slave['TASK_FINISHED']
-            slaves_metrics[slaves['id']]['tasks']['LOST'] = slave['TASK_LOST']
-            slaves_metrics[slaves['id']]['tasks']['RUNNING'] = slave['TASK_RUNNING']
-            slaves_metrics[slaves['id']]['tasks']['STAGING'] = slave['TASK_STAGING']
-            slaves_metrics[slaves['id']]['tasks']['STARTING'] = slave['TASK_STARTING']
-            slaves_metrics[slaves['id']]['offered_resources']['cpus'] = slave['offered_resources']['cpus']
-            slaves_metrics[slaves['id']]['offered_resources']['mem'] = slave['offered_resources']['mem'] * 1024 * 1024
-            slaves_metrics[slaves['id']]['offered_resources']['disk'] = slave['offered_resources']['disk'] * 1024 * 1024
-            slaves_metrics[slaves['id']]['used_resources']['cpus'] = slave['used_resources']['cpus']
-            slaves_metrics[slaves['id']]['used_resources']['mem'] = slave['used_resources']['mem'] * 1024 * 1024
-            slaves_metrics[slaves['id']]['used_resources']['disk'] = slave['used_resources']['disk'] * 1024 * 1024
-            slaves_metrics[slaves['id']]['resources']['cpus'] = slave['resources']['cpus']
-            slaves_metrics[slaves['id']]['resources']['mem'] = slave['resources']['mem'] * 1024 * 1024
-            slaves_metrics[slaves['id']]['resources']['disk'] = slave['resources']['disk'] * 1024 * 1024
+            slaves_metrics[slave['id']]['tasks']['ERROR'] = slave['TASK_ERROR']
+            slaves_metrics[slave['id']]['tasks']['FAILED'] = slave['TASK_FAILED']
+            slaves_metrics[slave['id']]['tasks']['KILLED'] = slave['TASK_KILLED']
+            slaves_metrics[slave['id']]['tasks']['FINISHED'] = slave['TASK_FINISHED']
+            slaves_metrics[slave['id']]['tasks']['LOST'] = slave['TASK_LOST']
+            slaves_metrics[slave['id']]['tasks']['RUNNING'] = slave['TASK_RUNNING']
+            slaves_metrics[slave['id']]['tasks']['STAGING'] = slave['TASK_STAGING']
+            slaves_metrics[slave['id']]['tasks']['STARTING'] = slave['TASK_STARTING']
+            slaves_metrics[slave['id']]['offered_resources']['cpus'] = slave['offered_resources']['cpus']
+            slaves_metrics[slave['id']]['offered_resources']['mem'] = slave['offered_resources']['mem'] * 1024 * 1024
+            slaves_metrics[slave['id']]['offered_resources']['disk'] = slave['offered_resources']['disk'] * 1024 * 1024
+            slaves_metrics[slave['id']]['used_resources']['cpus'] = slave['used_resources']['cpus']
+            slaves_metrics[slave['id']]['used_resources']['mem'] = slave['used_resources']['mem'] * 1024 * 1024
+            slaves_metrics[slave['id']]['used_resources']['disk'] = slave['used_resources']['disk'] * 1024 * 1024
+            slaves_metrics[slave['id']]['resources']['cpus'] = slave['resources']['cpus']
+            slaves_metrics[slave['id']]['resources']['mem'] = slave['resources']['mem'] * 1024 * 1024
+            slaves_metrics[slave['id']]['resources']['disk'] = slave['resources']['disk'] * 1024 * 1024
         return (dcos_metrics, slaves_metrics)
 
     def add_datapoints(self, data):
